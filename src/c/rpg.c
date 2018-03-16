@@ -24,11 +24,9 @@
 
 #include <stdbool.h>
 #include <stdio.h>
-#include "rngs.h"
-
+#include <stdlib.h>
 #include <string.h>
-#include <stdlib.h>     /* srand, rand */
-#include <time.h>       /* time */
+#include "rngs.h"
 
 #define MAX_PW_LENGTH 512
 
@@ -111,7 +109,6 @@ void rpg(int n, char* buff, struct Flags flags, char* forbidden) {
 
     // Remove any characters specified as forbidden by the user.
     // Got some help here: https://stackoverflow.com/questions/9895216/how-to-remove-all-occurrences-of-a-given-character-from-string-in-c
-    printf("%s\n", ascii_chars);
     char *fchar = forbidden;
     while(*fchar) {
         // Remove forbidden char from list.
@@ -123,7 +120,7 @@ void rpg(int n, char* buff, struct Flags flags, char* forbidden) {
         *pwrite = '\0'; // End NULL char to end string
         fchar++; // Increment the pointer to the next char
     }
-    printf("%s\n", ascii_chars);
+    
     // Generate the random password and ensure it meets the criteria (contains
     // characters from each specified group).
     int i;
