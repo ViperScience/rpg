@@ -110,3 +110,6 @@ ENV/
 # Rust/Cargo
 target/
 
+# IDE
+.vscode
+
