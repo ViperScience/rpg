@@ -24,8 +24,6 @@
 
 extern crate rand;
 
-//use std::io;
-
 use std::env;
 use rand::Rng;
 
